@@ -1,0 +1,70 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Acople de entrada y medición de la componente DC</b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted podrá mover y seleccionar la posición el control de <b>acople de entrada</b> (resaltado en color amarillo) de este osciloscopio. Una vez considere que ya tiene la respuesta, debe escribir el valor medido o calculado en el recuadro (en voltios) y posteriormente podrá verificar si este valor es correcto, seleccionando la opción VERIFICAR.<br><br>
+Recuerde que, para separar las fracciones decimales, debe usar la coma ”,” y NO el punto “.”.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div>
+<h3>Indicar el valor promedio de la señal que se observa en pantalla, a partir del cambio de acople de
+entrada (AC, GND o DC).</h3>
+</div>
+
+
+
+
+  <div>
+    <img class="imagencentro" src="img2/9_esc_horizontal1.png" id="mainImage"><!--Imagen Base-->
+    <div class="Listas3">
+      <h3>Poner acá la respuesta:  <input id="numb" class="Cuadro_text"><!--Cuadro de texto-->  V.</h3>
+    </div>
+    <input class="myButton23" type="submit" value="Verificar" onclick="return myFunction();"><!--Boton de verificar-->
+    <input id="myButton" type="image" src="img2/boton_invisible.png" class="mover9" onclick="changeImage()"><!--Boton Funcional Cambio de imagen-->
+  </div>
+  </div>
+
+<!--Codigo javascript-->
+
+  <script type="text/javascript">
+    //objetos
+    var myImage = document.getElementById('mainImage');
+    var myButton = document.getElementById('myButton');
+    //arreglos
+    var imageArray = ["img2/9_esc_horizontal1.png", "img2/9_esc_horizontal2.png", "img2/9_esc_horizontal3.png"];
+
+    //contador
+    var imageIndex = 0;
+
+    //funciones
+    function changeImage() {
+      imageIndex++;
+      if (imageIndex > 2) {
+        imageIndex = 0;
+      }
+      myImage.setAttribute("src", imageArray[imageIndex]);
+}
+
+    function myFunction() {
+      var x; /*Variable*/
+      x = document.getElementById("numb").value;
+      if (x == "1") {
+        alert ('CORRECTO. Ya que, al realizar el cambio de acople de entrada de AC a DC, la señal se desplaza un cuadro hacia arriba, entonces el valor del voltaje DC corresponde a un cuadro por la escala vertical (1 V/div), lo que da como resultado que el valor DC de la señal es de 1 V.');
+      } else {
+        alert ('INCORRECTO. Se debe tener en cuenta el nivel cero en la pantalla del osciloscopio (acople GND) y los desplazamientos verticales de la señal al realizar el cambio del acople AC (señal sin componente DC) y al acople DC (la señal completa AC + DC). Para realizar el cálculo del valor DC de la señal se debe tener en cuenta tanto este desplazamiento vertical, como el valor de la escala vertical.');
+      }
+
+    }
+  </script>
+</body>
+</html>

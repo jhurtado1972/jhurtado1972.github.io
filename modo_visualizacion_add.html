@@ -1,0 +1,81 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Modo de visualización (ADD e INVERTIDO).</b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted podrá mover y seleccionar la posición del control de <b>inversión de canal o INV</b> (resaltado en color amarillo) de este osciloscopio. Una vez considere que ha comprendido la función de este control, podrá responder la pregunta planteada, escogiendo una única respuesta entre las opciones dadas, la cual podrá ser evaluada al seleccionar la opción VERIFICAR.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div><h3>El osciloscopio tiene las mismas dos señales de entrada que el punto anterior (señal pulsatoria y señal triangular con DC, con el mismo periodo y con la posición vertical centrada en cada canal).<br>
+A partir de la manipulación realizada sobre el control de inversión del canal 2, indique el nivel de valor máximo de la adicción de estas dos señales (CH1 + CH2) y el valor máximo de la sustracción de las señales (CH1 – CH2).</h3>
+</div>
+<div>
+    <img class="imagencentro" src="img2/20.modo_de_visualizacion_(ch2-norm).png" id="mainImage">
+    <input class="myButton22" type="submit" value="Verificar" onclick="radio();">
+    <input id="myButton" type="image" src="img2/boton_invisible.png" class="mover20" onclick="changeImage()">
+    <div class="Listas2">
+    <h3> Seleccioné su respuesta</h3><!--Opcion Multiple-->
+  <h3><input type="radio" name="auto_renew"  id="auto_renew_1"/>Suma: valor máximo = +3 V. Resta: valor máximo = -3 V.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>Suma: valor máximo = +3 V. Resta: valor máximo = +5 V.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>Suma: valor máximo = -3 V. Resta: valor máximo = +5 V.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>Suma: valor máximo = +3 V. Resta: valor máximo = -1 V.<br></h3>
+</div>
+</div>
+</body>
+</html>
+
+
+  <script type="text/javascript">
+    //objetos
+    var myImage = document.getElementById('mainImage');
+    var myButton = document.getElementById('myButton');
+    //arreglos
+    var imageArray = ["img2/20.modo_de_visualizacion_(ch2-norm).png", "img2/20.modo_de_visualizacion_(ch2-inv).png"];
+
+    //contador
+    var imageIndex = 0;
+
+    //funciones
+    function changeImage() {
+      imageIndex++;
+      if (imageIndex > 1) {
+        imageIndex = 0;
+      }
+      myImage.setAttribute("src", imageArray[imageIndex]);
+
+
+
+    }
+
+    function radio(){
+
+    var type = document.getElementsByName('auto_renew');
+    if (type[0].checked)
+    {
+      alert('INCORRECTO. Al menos uno de los valores está incorrecto. Recuerde que la señal podría tener valores que no se observan en la pantalla, ya que se pierde la continuidad horizontal de la traza.');
+    }
+    else if (type[1].checked)
+    {
+      alert('CORRECTO. En ocasiones hay trozos de la señal que no se ven en la pantalla. Esto no significa que no existan o no deban tenerse en cuenta, por el contrario, si desean visualizarse se debe cambiar al escala vertical u horizontal dado el caso.');
+    }
+    else if (type[2].checked)
+    {
+      alert('INCORRECTO. Al menos uno de los valores está incorrecto. Recuerde que la señal podría tener valores que no se observan en la pantalla, ya que se pierde la continuidad horizontal de la traza.');
+    }
+    else if (type[3].checked)
+    {
+      alert('INCORRECTO. Al menos uno de los valores está incorrecto. Recuerde que la señal podría tener valores que no se observan en la pantalla, ya que se pierde la continuidad horizontal de la traza.');
+    }
+
+
+    }
+  </script>

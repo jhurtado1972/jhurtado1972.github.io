@@ -1,0 +1,45 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Valor del nivel de disparo</b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted debe dar la respuesta a la pregunta dada con respecto al <b>nivel de disparo</b> a partir de la señal observada en la pantalla de este osciloscopio. Una vez considere que ya tiene la respuesta, debe escribir el valor medido o calculado en el recuadro (en voltios) y posteriormente podrá verificar si este valor es correcto, seleccionando la opción VERIFICAR.<br><br>
+Recuerde que, para separar las fracciones decimales, debe usar la coma ”,” y NO el punto “.”.
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div>
+<h3>¿Cuál sería el valor del nivel de disparo (en voltios), para que se pudiera observar la señal sobre la pantalla del osciloscopio tal y como se pidió en el punto anterior (coseno negativo)?</h3>
+</div>
+<div>
+    <img class="imagencentro" src="img2/14_pendiente_disparo1.png" id="mainImage"><!--Imagen Base-->
+    <div class="Listas3">
+      <h3>Poner acá la respuesta:  <input id="numb" class="Cuadro_text"><!--Cuadro de texto-->  V .</h3>
+    </div>
+    <input class="myButton23" type="submit" value="Verificar" onclick="return myFunction();"><!--Boton de verificar-->
+  </div>
+</body>
+</html>
+
+<!--Codigo javascript-->
+<script>
+/*Funcion*/
+function myFunction() {
+  var x; /*Variable*/
+  x = document.getElementById("numb").value;
+  if (x == "-2") {
+    alert ('CORRECTOinEste nivel de disparo permite visualizar en la pantalla una señal coseno negativa desde el inicio de la traza en la pantalla.');
+  } else {
+    alert ('INCORRECTO. Este nivel de disparo no permite visualizar en la pantalla una señal coseno negativa desde el inicio de la traza en la pantalla. Recuerde que el valor del nivel de disparo debe coincidir con el valor de voltaje (tanto positivo como negativo) del inicio de la señal sobre la pantalla del osciloscopio.');
+  }
+
+}
+</script>

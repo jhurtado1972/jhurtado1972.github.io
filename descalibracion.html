@@ -1,0 +1,79 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Descalibración escala vertical y medición de tiempo de subida</b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted podrá mover y seleccionar la posición del control de <b>calibración de la escala vertical</b> (resaltado en color amarillo) de este osciloscopio. Una vez considere que ha comprendido la función del control manipulado podrá responder la pregunta planteada, escogiendo una única respuesta entre las opciones dadas, la cual podrá ser evaluada al seleccionar la opción VERIFICAR.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div>
+<h3>El osciloscopio se encuentra calibrado en su escala vertical, pero para mejorar la visualización de la señal sobre la pantalla, usted puede descalibrar esta escala.
+A partir de las observaciones hechas al manipular el control de descalibración de la escala vertical y teniendo en cuenta las mediciones realizadas sobre la retícula, indicar el tiempo de subida (tiempo que tarda la señal en pasar del 10% al 90% de la amplitud) del pulso observado en la pantalla del osciloscopio.<br><br>
+La posición vertical del osciloscopio está centrada verticalmente y su fuente de sincronismo está por el canal 2 (que no aparece en pantalla) para lograr la visualización mostrada del canal 1.</h3>
+</div>
+<div>
+    <img class="imagencentro" src="img2/25.descalibracion_a.png" id="mainImage">
+    <input class="myButton22" type="submit" value="Verificar" onclick="radio();">
+    <input id="myButton" type="image" src="img2/boton_invisible.png" class="mover25" onclick="changeImage()"><br><br><br>
+    <div class="Listas">
+    <h3> Seleccioné su respuesta</h3><!--Opcion Multiple-->
+  <h3><input type="radio" name="auto_renew"  id="auto_renew_1"/>Tiempo de subida = 400 μs.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>Tiempo de subida = 320 μs.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>Tiempo de subida = 240 μs.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>Tiempo de subida = 200 μs.<br></h3>
+</div>
+  </div>
+</body>
+</html>
+
+<!--Codigo javascript-->
+
+  <script type="text/javascript">
+    //objetos
+    var myImage = document.getElementById('mainImage');
+    var myButton = document.getElementById('myButton');
+    //arreglos
+    var imageArray = ["img2/25.descalibracion_a.png", "img2/25.descalibracion_b.png", "img2/25.descalibracion_c.png"];
+    //contador
+    var imageIndex = 0;
+    //funciones
+    function changeImage() {
+      imageIndex++;
+      if (imageIndex > 2) {
+        imageIndex = 0;
+      }
+      myImage.setAttribute("src", imageArray[imageIndex]);
+    }
+
+    function radio(){
+
+    var type = document.getElementsByName('auto_renew');
+    if (type[0].checked)
+    {
+      alert('INCORRECTO. Recuerde que la medición del tiempo de subida va entre el 10% del valor de la amplitud hasta el 90% del valor de la amplitud. NO se realiza entre el 0% y el 100%. Recuerde también, que para realizar el cálculo de intervalo de tiempo debe tener en cuenta tanto el valor de la escala horizontal como el número de divisiones o líneas horizontales entre los dos puntos a medir.');
+    }
+    else if (type[1].checked)
+    {
+      alert('CORRECTO. Muy bien, se debe utilizar en control de descalibración de escala vertical, para ubicar los extremos de la señal entre el 0% y el 100% (valores puestos en la parte izquierda de la pantalla). Una vez se tiene la señal entre el 0% y el 100%, se cuenta el número de divisiones que hay entre el 10% de la señal y el 90% de la señal (valores demarcados a la izquierda de la pantalla). En este caso al contar el número de divisiones, nos dan 16 líneas (recuerden que hay 5 líneas por cuadro). Que al realizar el producto por la escala horizontal de 0,1 ms/div, nos da como resultado: 0.1 ms/div x 16 líneas / 5 líneas por división = 320 μs.');
+    }
+    else if (type[2].checked)
+    {
+      alert('INCORRECTO. Recuerde que la medición del tiempo de subida va entre el 10% del valor de la amplitud hasta el 90% del valor de la amplitud. NO se realiza entre el 0% y el 100%. Recuerde también, que para realizar el cálculo de intervalo de tiempo debe tener en cuenta tanto el valor de la escala horizontal como el número de divisiones o líneas horizontales entre los dos puntos a medir.');
+    }
+    else if (type[3].checked)
+    {
+      alert('INCORRECTO. Recuerde que la medición del tiempo de subida va entre el 10% del valor de la amplitud hasta el 90% del valor de la amplitud. NO se realiza entre el 0% y el 100%. Recuerde también, que para realizar el cálculo de intervalo de tiempo debe tener en cuenta tanto el valor de la escala horizontal como el número de divisiones o líneas horizontales entre los dos puntos a medir.');
+    }
+
+
+    }
+  </script>

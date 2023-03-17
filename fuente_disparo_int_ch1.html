@@ -1,0 +1,85 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Fuente de disparo (INT-CH1, LINE, EXT)</b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted podrá mover y seleccionar la posición del control de <b>fuente de disparo o source</b> (resaltado en color amarillo) de este osciloscopio. Una vez considere que ha comprendido la función del control manipulado podrá responder la pregunta planteada, escogiendo una única respuesta entre las opciones dadas, la cual podrá ser evaluada al seleccionar la opción VERIFICAR.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div>
+<h3>El osciloscopio tiene como entrada una señal que está modulada en amplitud. Esta señal es de difícil visualización estable en la pantalla. Esta vez se usted podrá utilizar diferentes fuentes de sincronismo (INT-CH1, LINE, EXT) para lograr la correcta visualización de esta señal.<br>
+La señal de sincronismo INT-CH1 es la señal modulada, la señal de sincronismo LINE corresponde a la señal de la línea de alimentación eléctrica y la señal de sincronismo externa (EXT), corresponde a la señal moduladora o señal envolvente (señal sinusoidal de periodo T= 300 μs).<br>
+¿Con cuál de las siguientes fuentes de sincronismo (INT-CH1, LINE, EXT) es más sencillo lograr la estabilización de la señal en la pantalla?</h3>
+</div>
+<div>
+    <img class="imagencentro" src="img2/23.fuente_disparo_a.png" id="mainImage">
+    <input class="myButton22" type="submit" value="Verificar" onclick="radio();">
+    <input id="myButton" type="image" src="img2/boton_invisible.png" class="mover23" onclick="changeImage()"><br><br>
+    <div class="Listas">
+    <h3> Seleccioné su respuesta</h3><!--Opcion Multiple-->
+  <h3><input type="radio" name="auto_renew"  id="auto_renew_1"/>INT-CH1.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>INT-CH2.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>LINE.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>EXT.<br></h3>
+</div>
+  </div>
+</body>
+</html>
+
+
+  <script type="text/javascript">
+    //objetos
+    var myImage = document.getElementById('mainImage');
+    var myButton = document.getElementById('myButton');
+    //arreglos
+    var imageArray = ["img2/23.fuente_disparo_a.png", "img2/23.fuente_disparo_b.png", "img2/23.fuente_disparo_c.png"];
+
+    //contador
+    var imageIndex = 0;
+
+    //funciones
+    function changeImage() {
+      imageIndex++;
+      if (imageIndex > 2) {
+        imageIndex = 0;
+      }
+      myImage.setAttribute("src", imageArray[imageIndex]);
+
+
+
+    }
+
+    function radio(){
+
+    var type = document.getElementsByName('auto_renew');
+    if (type[0].checked)
+    {
+      alert('INCORRECTO. Con esta selección del control de fuente de disparo no es sencillo lograr una señal modulada estable en la pantalla.');
+    }
+    else if (type[1].checked)
+    {
+      alert('INCORRECTO. Con esta selección del control de fuente de disparo no es sencillo lograr una señal modulada estable en la pantalla. Incluso si el modo de disparo estuviese en NORM, no aparecería ninguna señal en la pantalla.');
+    }
+    else if (type[2].checked)
+    {
+      alert('INCORRECTO. Con esta selección del control de fuente de disparo solo se lograría ver una señal estable medianamente si la señal moduladora o envolvente sería de la misma frecuencia de línea.');
+    }
+    else if (type[3].checked)
+    {
+      alert('CORRECTO. Con esta selección del control de fuente de disparo se lograría apreciar una señal modulada de forma estable en la pantalla.');
+    }
+
+
+    }
+  </script>
+</body>
+</html>

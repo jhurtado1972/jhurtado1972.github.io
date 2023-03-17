@@ -1,0 +1,88 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Modo de visualización (CH1, CH2, CHOP y ALT).</b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted podrá mover y seleccionar la posición del control de <b>modo de visualización o display mode</b> (resaltado en color amarillo) de este osciloscopio. Una vez considere que ha comprendido la función del control manipulado, podrá responder la pregunta planteada, escogiendo una única respuesta entre las opciones dadas, la cual podrá ser evaluada al seleccionar la opción VERIFICAR.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div>
+<h3>El osciloscopio tiene dos señales de entrada con el mismo periodo, que desean ser visualizadas en la pantalla, una señal pulsatoria (señal cuadrada con un DC positivo que logra que el mínimo valor de la señal sea igual a 0 V) por el canal 1 y una señal triangular con un DC negativo por el canal 2. Ambos canales tienen la posición vertical centrada.
+A partir de la manipulación realizada sobre el control de modo de visualización (CH1, CH2, CHOP o ALT), indique el nivel de valor DC de cada una de las dos señales.</h3>
+</div>
+<div>
+    <img class="imagencentro" src="img2/17.modo_de_visualizacion_ch1.png" id="mainImage">
+    <input class="myButton22" type="submit" value="Verificar" onclick="radio();">
+    <input id="myButton" type="image" src="img2/boton_invisible.png" class="mover17" onclick="changeImage()">
+    <div class="Listas2">
+    <h3> Seleccioné su respuesta</h3><!--Opcion Multiple-->
+  <h3><input type="radio" name="auto_renew"  id="auto_renew_1"/>Señal cuadrada DC = 0 V y señal triangular = -1 V.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>Señal cuadrada DC = +2 V y señal triangular = -2 V.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>Señal cuadrada DC = +1 V y señal triangular = -1 V.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>Señal cuadrada DC = +1 V y señal triangular = -2 V.<br></h3>
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+  <script type="text/javascript">
+    //objetos
+    var myImage = document.getElementById('mainImage');
+    var myButton = document.getElementById('myButton');
+    //arreglos
+    var imageArray = ["img2/17.modo_de_visualizacion_ch1.png", "img2/17.modo_de_visualizacion_ch2.png", "img2/17.modo_de_visualizacion_chop.png",  "img2/17.modo_de_visualizacion_alt.png"];
+
+    //contador
+    var imageIndex = 0;
+
+    //funciones
+    function changeImage() {
+      imageIndex++;
+      if (imageIndex > 3) {
+        imageIndex = 0;
+      }
+      myImage.setAttribute("src", imageArray[imageIndex]);
+
+
+
+    }
+
+
+    function radio(){
+
+    var type = document.getElementsByName('auto_renew');
+    if (type[0].checked)
+    {
+      alert('INCORRECTO. Al menos uno de los valores no corresponde al valor DC de las señales.');
+    }
+    else if (type[1].checked)
+    {
+      alert('INCORRECTO. Al menos uno de los valores no corresponde al valor DC de las señales.');
+    }
+    else if (type[2].checked)
+    {
+      alert('CORRECTO. Al menos uno de los valores no corresponde al valor DC de las señales.');
+    }
+    else if (type[3].checked)
+    {
+      alert('INCORRECTO. Al menos uno de los valores no corresponde al valor DC de las señales.');
+    }
+
+
+    }
+  </script>
+</body>
+</html>

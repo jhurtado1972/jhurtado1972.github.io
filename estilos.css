@@ -1,0 +1,297 @@
+/* Logo Ing Electronica*/
+.div2{
+  width: 30%;
+}
+.imaIng{
+  width: 100%;
+    position: relative;
+}
+/*Fuente*/
+p {
+font-family: helvetica;
+    margin-left: 30px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+
+h3{
+  margin-left: 30px;
+  padding-top: 12px;
+  font-family: helvetica;
+}
+.fondo{
+background-color: #E5E5E5;
+}
+/*Listas*/
+.Listas{
+margin-left: 40px;
+margin-top: 150px;
+}
+/*Listas2*/
+.Listas2{
+margin-left: 40px;
+margin-top: 310px;
+}
+.Listas3{
+margin-left: 40px;
+margin-top: 50px;
+}
+/*Posicion de Botones*/
+.mover1{
+display: block;
+margin-left: 193px;
+margin-top: -165px;
+width:60px;
+ height:60px;
+ border-radius:150px;
+}
+.mover2{
+  width:60px;
+   height:60px;
+   border-radius:150px;
+   display: block;
+   margin-left: 280px;
+   margin-top: -165px;
+}
+.mover3{
+  width:30px;
+   height:30px;
+   border-radius:150px;
+   display: block;
+   margin-left: 386px;
+   margin-top: -147px;
+}
+.mover4{
+  width:60px;
+   height:60px;
+   border-radius:150px;
+   display: block;
+   margin-left: 642px;
+   margin-top: -323px;
+}
+.mover6{
+  width:93px;
+   height:93px;
+   border-radius:150px;
+   display: block;
+   margin-left: 1107px;
+   margin-top: -338px;
+}
+.mover8{
+  width:65px;
+   height:30px;
+   border-radius:150px;
+   display: block;
+   margin-left: 640px;
+   margin-top: -235px;
+}
+.mover9{
+  width:65px;
+   height:30px;
+   border-radius:150px;
+   display: block;
+   margin-left: 640px;
+   margin-top: -265px;
+ }
+.mover10{
+  width:62px;
+   height:32px;
+   border-radius:150px;
+   display: block;
+   margin-left: 640px;
+   margin-top: -333px;
+ }
+.mover11{
+   width:60px;
+    height:60px;
+    border-radius:150px;
+    display: block;
+    margin-left: 645px;
+    margin-top: -505px;
+
+ }
+.mover12{
+   width:62px;
+    height:62px;
+    border-radius:150px;
+    display: block;
+    margin-left: 1064px;
+    margin-top: -505px;
+ }
+.mover13{
+  width:62px;
+   height:62px;
+   border-radius:150px;
+   display: block;
+   margin-left: 924px;
+   margin-top: -505px;
+}
+.mover15{
+  width:50px;
+   height:27px;
+   border-radius:150px;
+   display: block;
+   margin-left: 930px;
+   margin-top: -340px;
+ }
+ .mover15_2{
+   width:50px;
+    height:27px;
+    border-radius:150px;
+    display: block;
+    margin-left: 780px;
+    margin-top: -43px;
+  }
+ .mover16{
+   width:65px;
+    height:27px;
+    border-radius:150px;
+    display: block;
+    margin-left: 922px;
+    margin-top: -400px;
+  }
+.mover17{
+  width:22px;
+   height:92px;
+   border-radius:150px;
+   display: block;
+   margin-left: 730px;
+   margin-top: -459px;
+}
+.mover18{
+  width:22px;
+   height:92px;
+   border-radius:150px;
+   display: block;
+   margin-left: 730px;
+   margin-top: -459px;
+}
+.mover19{
+  width:22px;
+   height:92px;
+   border-radius:150px;
+   display: block;
+   margin-left: 730px;
+   margin-top: -459px;
+}
+.mover20{
+  width:42px;
+   height:22px;
+   border-radius:150px;
+   display: block;
+   margin-left: 783px;
+   margin-top: -407px;
+}
+.mover21{
+  width:65px;
+   height:27px;
+   border-radius:150px;
+   display: block;
+   margin-left: 922px;
+   margin-top: -232px;
+}
+.mover22{
+  width:62px;
+   height:62px;
+   border-radius:150px;
+   display: block;
+   margin-left: 924px;
+   margin-top: -505px;
+}
+.mover23{
+  width:65px;
+   height:27px;
+   border-radius:150px;
+   display: block;
+   margin-left: 922px;
+   margin-top: -279px;
+}
+.mover24{
+  width:62px;
+   height:62px;
+   border-radius:150px;
+   display: block;
+   margin-left: 1170px;
+   margin-top: -505px;
+}
+.mover25{
+  width:60px;
+   height:60px;
+   border-radius:150px;
+   display: block;
+   margin-left: 643px;
+   margin-top: -323px;
+}
+
+.mover33{
+  position: absolute;
+  width:60px;
+   height:60px;
+   border-radius:150px;
+   display: block;
+   margin-left: 925px;
+   margin-top: -132px;
+}
+/*ImagenMain*/
+.imagencentro{
+margin-left: 30px;
+}
+
+
+
+/*Cuadro de texto*/
+.Cuadro_text{
+font-size: 20px;
+  }
+
+/*Boton Verificar */
+.myButton22 {
+	background-color:#5DBAFA;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #4D4C5E;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+  margin-top: 20px;
+  margin-left: 672px;
+  margin-bottom: 10px;
+
+}
+.myButton22:hover {
+	background-color:#4D4C5E;
+}
+.myButton22:active {
+	position:relative;
+	top:1px;
+}
+.myButton23 {
+	background-color:#5DBAFA;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #4D4C5E;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+  margin-top: -60px;
+  margin-left: 672px;
+  margin-bottom: 10px;
+}
+.myButton22:hover {
+	background-color:#4D4C5E;
+}
+.myButton22:active {
+	position:relative;
+	top:1px;
+}

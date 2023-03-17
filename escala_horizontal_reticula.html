@@ -1,0 +1,60 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Escala horizontal y retícula de la pantalla</b></p><!--Titulo en Negrilla-->
+<!--texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted podrá mover y seleccionar la posición el control de la <b>escala horizontal</b> (resaltado en color amarillo) de este osciloscopio. Una vez considere que ha puesto el control en la posición adecuada de acuerdo con la pregunta dada, podrá verificar si esta es la posición correcta, seleccionando la opción VERIFICAR.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div>
+<h3>Mover el control de escala horizontal (50 μs/div, 20 μs/div o 10 μs/div,) del osciloscopio, de tal forma
+que se pueda identificar claramente el valor del periodo de la señal que se muestra en la pantalla del
+osciloscopio.</h3>
+</div>
+<div>
+    <img class="imagencentro" src="img2/6_esc_horizontal1.png" id="mainImage"><!--Imagen Base-->
+    <input class="myButton22" type="submit" value="Verificar" onclick="return Verificar();"><!--Boton de verificar-->
+    <input id="myButton" type="image" src="img2/boton_invisible.png" class="mover6" onclick="changeImage()"><!--Boton Funcional Cambio de imagen-->
+  </div>
+</body>
+</html>
+
+<!--codigo javascript-->
+
+  <script type="text/javascript">
+    //objetos
+    var myImage = document.getElementById('mainImage');
+    var myButton = document.getElementById('myButton');
+    //arreglos
+    var imageArray = ["img2/6_esc_horizontal1.png", "img2/6_esc_horizontal2.png", "img2/6_esc_horizontal3.png"];
+    //contador
+    var imageIndex = 0;
+    //funciones
+    function changeImage() {
+      imageIndex++;
+      if (imageIndex > 2) {
+        imageIndex = 0;
+      }
+      myImage.setAttribute("src", imageArray[imageIndex]);
+    }
+    function Verificar() {
+      if ((imageIndex) == 1) {
+        alert('CORRECTO. Se observa al menos un periodo completo de la señal (el primer periodo se cumple aproximadamente en el sexto cuadro de división de la retícula de izquierda a derecha de la pantalla), obteniendo una buena resolución, junto con una referencia clara sobre la retícula.');
+      } else if((imageIndex)==0){
+        alert('INCORRECTO. Aunque se puede observar al menos un periodo completo de la señal (el primer periodo se cumple aproximadamente en la séptima línea de división de la retícula de izquierda a derecha de la pantalla), no se tiene la mejor resolución para esta medición.');
+      } else if((imageIndex) ==2) {
+        alert('INCORRECTO. No se logra ni siquiera observar un periodo completo en la pantalla.');
+      } else {
+        alert('Seleccione una respuesta')
+      }
+    }
+  </script>

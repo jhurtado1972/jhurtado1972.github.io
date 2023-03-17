@@ -1,0 +1,58 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Rotación de la traza</b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted podrá mover y seleccionar la posición el control de <b>rotación de la traza</b> (resaltado en color amarillo)  de este osciloscopio. Una vez considere que ha puesto el control en la posición adecuada de acuerdo con la pregunta dada, podrá verificar si esta es la posición correcta, seleccionando la opción VERIFICAR.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div>
+<h3>Poner el control de rotación en la posición correcta para visualizar la traza de forma adecuada en la pantalla del osciloscopio.</h3>
+</div>
+<div>
+    <img class="imagencentro" src="img2/3_rotacion1.png" id="mainImage"><!--Imagen Base-->
+    <input class="myButton22" type="submit" value="Verificar" onclick="return Verificar();"><!--Boton de verificar-->
+    <input id="myButton" type="image" src="img2/boton_invisible.png" class="mover3" onclick="changeImage()"><!--Boton Funcional Cambio de imagen-->
+  </div>
+</body>
+</html>
+
+<!--Codigo javascript-->
+
+  <script type="text/javascript">
+    //objetos
+    var myImage = document.getElementById('mainImage');
+    var myButton = document.getElementById('myButton');
+    //arreglos
+    var imageArray = [ "img2/3_rotacion1.png", "img2/3_rotacion2.png", "img2/3_rotacion3.png"];
+    //contador
+    var imageIndex = 0;
+    //funciones
+    function changeImage() {
+      imageIndex++;
+      if (imageIndex > 2) {
+        imageIndex = 0;
+      }
+      myImage.setAttribute("src", imageArray[imageIndex]);
+    }
+    function Verificar() {
+      if ((imageIndex) == 0) {
+        alert('INCORRECTO. Línea recta que se observa en la pantalla, está ligeramente inclinada hacia arriba, por lo tanto, aunque pase por el centro de la pantalla no se podrían hacer mediciones fiables de amplitud o de tiempo.');
+      } else if((imageIndex)==1){
+        alert('CORRECTO. Línea recta que se observa en la pantalla es completamente horizontal, por lo tanto, la traza está adecuadamente ajustada para este parte del mundo.');
+      } else if((imageIndex) ==2) {
+        alert('INCORRECTO. Línea recta que se observa en la pantalla, está ligeramente inclinada hacia abajo, por lo tanto, aunque pase por el centro de la pantalla no se podrían hacer mediciones fiables de amplitud o de tiempo.');
+      } else {
+        alert('Seleccione una respuesta')
+      }
+    }
+  </script>

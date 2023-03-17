@@ -1,0 +1,109 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Modo de visualización (INVERTIDO).</b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted podrá mover y seleccionar la posición de los controles de <b>modo de visualización o display mode y de inversión o INV</b> (resaltado en color amarillo) de este osciloscopio. Una vez considere que ha comprendido la función de los controles manipulados, podrá responder la pregunta planteada, escogiendo una única respuesta entre las opciones dadas, la cual podrá ser evaluada al seleccionar la opción VERIFICAR.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div><h3>El osciloscopio tiene dos señales de entrada con el mismo periodo, que desean ser visualizadas en la pantalla, una señal pulsatoria (señal cuadrada con un DC positivo que logra que el mínimo valor de la señal sea igual a 0 V) por el canal 1 y una señal triangular con un DC negativo por el canal 2. Ambos canales tienen la posición vertical centrada.<br>
+A partir de la manipulación realizada sobre los controles de modo de visualización y de inversión de canal, indique a cuáles canales del osciloscopio afecta directamente este modo.</h3>
+</div>
+<div>
+    <img class="imagencentro" src="img2/19.modo_de_visualizacion_(ch1-norm).png" id="mainImage">
+    <input class="myButton22" type="submit" value="Verificar" onclick="radio();">
+    <input id="myButton2" type="image" src="img2/boton_invisible.png" class="mover19" onclick="changeImage1()">
+    <input id="myButton" type="image" src="img2/boton_invisible.png" class="mover15_2" onclick="changeImage2()">
+    <div class="Listas2">
+    <h3> Seleccioné su respuesta</h3><!--Opcion Multiple-->
+  <h3><input type="radio" name="auto_renew"  id="auto_renew_1"/>El control INV solo afecta al canal 1.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>El control INV solo afecta al canal 2.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>El control INV afecta ambos canales.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>El control INV solo afecta a los canales si se cambia la pendiente de disparo.<br></h3>
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+  <script type="text/javascript">
+    //objetos
+    var myImage = document.getElementById('mainImage');
+    var myButton = document.getElementById('myButton');
+    var myButton2 = document.getElementById('myButton2')
+    //arreglos
+    var imageArray = ["img2/19.modo_de_visualizacion_(ch1-inv).png","img2/19.modo_de_visualizacion_(ch1-norm).png","img2/19.modo_de_visualizacion_(ch2-inv).png","img2/19.modo_de_visualizacion_(ch2-norm).png"];
+
+    //contador
+    var imageIndex = 0;
+
+
+    //funciones
+    var imageIndexButton1 = 0;
+    var imageIndexButton2 = 0;
+    //funciones
+
+    var imageArr = new Array(2);
+    imageArr[0] = new Array(2);
+    imageArr[1] = new Array(2);
+    imageArr[0][0] = "img2/19.Modo_de_visualizacion_(CH1-INV).png";
+    imageArr[0][1] = "img2/19.Modo_de_visualizacion_(CH1-NORM).png";
+    imageArr[1][0] = "img2/19.Modo_de_visualizacion_(CH2-INV).png";
+    imageArr[1][1] = "img2/19.Modo_de_visualizacion_(CH2-NORM).png";
+
+    function changeImage1(){
+      imageIndexButton1++;
+      if (imageIndexButton1 > 1) {
+      imageIndexButton1 =0;
+      }
+      changeImage();
+
+    }
+    function changeImage2(){
+      imageIndexButton2++;
+      if (imageIndexButton2 > 1) {
+      imageIndexButton2 =0;
+      }
+      changeImage();
+
+    }
+
+    function changeImage(){
+      console.log(imageIndexButton1 + '' + imageIndexButton2)
+      myImage.setAttribute("src", imageArr[imageIndexButton1][imageIndexButton2]);
+    }
+
+    function radio(){
+
+    var type = document.getElementsByName('auto_renew');
+    if (type[0].checked)
+    {
+      alert('INCORRECTO. Se debe revisar con cuidado las variaciones que sufre el canal 1 cuando se activa o desactiva el control de inversión (INV).');
+    }
+    else if (type[1].checked)
+    {
+      alert('CORRECTO. El control de inversión de canal (INV) solamente afecta al canal 2, ya que se utiliza junto a la opción ADD (suma), cuando se desea realizar la operación matemática de la resta entre las señales del canal 1 y del canal 2 (CH1-CH2).');
+    }
+    else if (type[2].checked)
+    {
+      alert('INCORRECTO. Se debe revisar con cuidado las variaciones que sufren tanto el canal 1 y como el canal 2 cuando se activa o desactiva el control de inversión (INV).');
+    }
+    else if (type[3].checked)
+    {
+      alert('INCORRECTO. La pendiente de disparo no afecta la funcionalidad del control de inversión (INV).');
+    }
+
+
+    }
+  </script>

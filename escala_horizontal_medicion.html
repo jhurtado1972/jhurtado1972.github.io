@@ -1,0 +1,49 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+  <p><b>Escala horizontal y medición de periodo </b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted debe dar la respuesta a la pregunta dada con respecto <b>escala horizontal, retícula y medición de periodo</b> a partir de la señal observada en la pantalla de este osciloscopio. Una vez considere que ya tiene la respuesta, debe escribir el valor medido o calculado en el recuadro (en milisegundos -ms-) y posteriormente podrá verificar si este valor es correcto, seleccionando la opción VERIFICAR.<br><br>
+Recuerde que, para separar las fracciones decimales, debe usar la coma ”,” y NO el punto “.”.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.
+</div><h3>Indicar el periodo de la señal que se observa en pantalla, a partir de las mediciones sobre la retícula y la escala horizontal seleccionada en el punto anterior.</h3>
+</div>
+
+
+
+
+  <div>
+    <img class="imagencentro" src="img2/7_esc_horizontal.png" id="mainImage"><!--Imagen Base-->
+    <div class="Listas3">
+      <h3>Poner acá la respuesta:  <input id="numb" class="Cuadro_text"><!--Cuadro de texto-->  μs.</h3>
+    </div>
+      <input class="myButton23" type="submit" value="Verificar" onclick="return myFunction();"><!--Boton de verificar-->
+</div>
+</body>
+</html>
+
+<!--Codigo javascript-->
+
+<script>
+/*Funcion*/
+function myFunction() {
+  var x; /*Variable*/
+  x = document.getElementById("numb").value;
+  if (x == "120") {
+    alert ('CORRECTO. El periodo de la señal sinusoidal es de 120 μs, la cual corresponde al producto del valor de la escala horizontal (20 μs/div) por el número de divisiones horizontales (seis cuadros), o que da como resultado 1,5 V.');
+  } else {
+    alert ('INCORRECTO. El periodo de la señal sinusoidal no corresponde al valor puesto en el recuadro. Recuerde que para realizar el cálculo de intervalo de tiempo debe tener en cuenta tanto el valor de la escala horizontal como el número de divisiones horizontales entre los dos puntos a medir.');
+  }
+
+}
+</script>

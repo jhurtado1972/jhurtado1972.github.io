@@ -1,0 +1,82 @@
+﻿<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Señal de prueba para comprobar las escalas vertical y horizontal del osciloscopio</b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted debe dar la respuesta a la pregunta dada con respecto a la <b>escala vertical y la escala horizontal</b> de este osciloscopio, a partir de la señal de prueba observada en la pantalla. Una vez considere que ya tiene la respuesta, podrá escoger una única respuesta entre las opciones dadas, la cual podrá verificar, seleccionando la opción VERIFICAR.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div>
+<h3>A partir de la visualización de la señal de prueba del osciloscopio (señal pulsatoria con valor pico a pico de 2 V y periodo de 1 ms), indicar las escalas vertical y horizontal en las cuales está el osciloscopio.</h3>
+</div>
+<div>
+    <img class="imagencentro" src="img2/10_seNal_prueba1.png" id="mainImage"><!--Imagen Base-->
+    <input class="myButton22" type="submit" value="Verificar" onclick="radio()"><!--Boton de verificar-->
+    <input id="myButton" type="image" src="img2/boton_invisible.png" class="mover10" onclick="changeImage()"><!--Boton Funcional Cambio de imagen-->
+    <div class="Listas">
+      <h3> Seleccioné su respuesta</h3>
+<h3>
+    <input type="radio" name="auto_renew" value="0,5 V/div y 0,2 ms/div" id="auto_renew_1"/>0,5 V/div y 0,2 ms/div<br>
+    <input type="radio" name="auto_renew" value="1 V/div y 0,2 ms/div" id="auto_renew_1"/>1 V/div y 0,2 ms/div<br>
+    <input type="radio" name="auto_renew" value="1 V/div y 0,1 ms/div" id="auto_renew_1"/>1 V/div y 0,1 ms/div<br>
+    <input type="radio" name="auto_renew" value="0,5 V/div y 0,1 ms/div" id="auto_renew_1"/>0,5 V/div y 0,1 ms/div<br></h3>
+</div>
+
+</body>
+</html>
+
+<!--Codigo javascript-->
+
+  <script type="text/javascript">
+    //objetos
+    var myImage = document.getElementById('mainImage');
+    var myButton = document.getElementById('myButton');
+    //arreglos
+    var imageArray = ["img2/10_seNal_prueba1.png", "img2/10_seNal_prueba2.png", "img2/10_seNal_prueba3.png"];
+    //contador
+    var imageIndex = 0;
+    //funciones
+    function changeImage() {
+      imageIndex++;
+      if (imageIndex > 2) {
+        imageIndex = 0;
+      }
+      myImage.setAttribute("src", imageArray[imageIndex]);
+
+    }
+
+
+function radio(){
+
+var type = document.getElementsByName('auto_renew');
+if (type[0].checked)
+{
+  alert(' CORRECTO. Muy bien, estas son las escalas vertical y horizontal, en las cuales debería estar el osciloscopio, para que coincida con la señal de prueba y así obtener la visualización mostrada en la pantalla.');
+}
+else if (type[1].checked)
+{
+  alert('INCORRECTO. Al menos una de las dos escalas no corresponde a la visualización mostrada en el osciloscopio. Recuerde que si el osciloscopio está bien calibrado, las mediciones de amplitud y periodo que se le hagan la señal de prueba en la pantalla del osciloscopio, deberían coincidir con los parámetros dados por el fabricante, que además aparecen en el panel frontal, junto al conector de prueba. (cal).');
+}
+else if (type[2].checked)
+{
+  alert('INCORRECTO. Al menos una de las dos escalas no corresponde a la visualización mostrada en el osciloscopio. Recuerde que si el osciloscopio está bien calibrado, las mediciones de amplitud y periodo que se le hagan la señal de prueba en la pantalla del osciloscopio, deberían coincidir con los parámetros dados por el fabricante, que además aparecen en el panel frontal, junto al conector de prueba. (cal).');
+}
+else if (type[3].checked)
+{
+  alert('INCORRECTO. Al menos una de las dos escalas no corresponde a la visualización mostrada en el osciloscopio. Recuerde que si el osciloscopio está bien calibrado, las mediciones de amplitud y periodo que se le hagan la señal de prueba en la pantalla del osciloscopio, deberían coincidir con los parámetros dados por el fabricante, que además aparecen en el panel frontal, junto al conector de prueba. (cal).');
+}
+
+
+}
+
+  </script>
+

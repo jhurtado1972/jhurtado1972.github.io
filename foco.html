@@ -1,0 +1,59 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Foco</b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted podrá mover y seleccionar la posición el control de <b>foco</b> (resaltado en color amarillo) de este osciloscopio. Una vez considere que ha puesto el control en la posición adecuada de acuerdo con la pregunta dada, podrá verificar si esta es la posición correcta, seleccionando la opción VERIFICAR.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div>
+<h3>¿Cuál sería la ubicación adecuada del control de foco, para observar claramente la señal en la pantalla del osciloscopio?</h3>
+</div>
+<div>
+    <img class="imagencentro" src="img2/2_foco1.png" id="mainImage"><!--Imagen Base-->
+    <input class="myButton22" type="submit" value="Verificar" onclick="return Verificar();"><!--Boton de verificar-->
+    <input id="myButton" type="image" src="img2/boton_invisible.png" class="mover2" onclick="changeImage()"><!--Boton Funcional Cambio de imagen-->
+  </div>
+</body>
+</html>
+
+
+<!--Codigo javascript-->
+
+  <script type="text/javascript">
+    //objetos
+    var myImage = document.getElementById('mainImage');
+    var myButton = document.getElementById('myButton');
+    //arreglos
+    var imageArray = ["img2/2_foco1.png", "img2/2_foco2.png", "img2/2_foco3.png"];
+    //contador
+    var imageIndex = 0;
+    //funciones
+    function changeImage() {
+      imageIndex++;
+      if (imageIndex > 2) {
+        imageIndex = 0;
+      }
+      myImage.setAttribute("src", imageArray[imageIndex]);
+    }
+    function Verificar() {
+      if ((imageIndex) == 0) {
+        alert('INCORRECTO. La señal en la pantalla está muy desenfocada, lo cual no permite observar la señal claramente.');
+      } else if((imageIndex)==1){
+        alert('INCORRECTO. La señal en la pantalla está un poco desenfocada, sin embargo, no permite observar la señal claramente.');
+      } else if((imageIndex) ==2) {
+        alert('CORRECTO. El osciloscopio tiene el foco adecuada para observar la señal claramente.');
+      } else {
+        alert('Seleccione una respuesta')
+      }
+    }
+  </script>

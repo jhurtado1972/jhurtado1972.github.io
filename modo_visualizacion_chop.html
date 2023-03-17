@@ -1,0 +1,80 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel=stylesheet type="text/css" href="estilos.css"><!-- Insertar Hoja de estilos-->
+</head>
+<body>
+<div class="div2">
+<img class="imaIng" src="img2/image002.png"><!-- Insertar Imagen Banner de Ingenieria electronica-->
+</div>
+<div>
+<p><b>Modo de visualización (CHOP y ALT).</b></p><!--Titulo en Negrilla-->
+<!--Texto-->
+<div class="fondo">
+<p style="color:#000" ;> A continuación, se le mostrará el panel frontal de un osciloscopio analógico.<br><br>
+Usted podrá mover y seleccionar la posición del control de <b>modo de visualización o display mode</b> (resaltado en color amarillo) de este osciloscopio. Una vez considere que ha comprendido la función del control manipulado, podrá responder la pregunta planteada, escogiendo una única respuesta entre las opciones dadas, la cual podrá ser evaluada al seleccionar la opción VERIFICAR.<br><br>
+Los controles del osciloscopio resaltados en color azul NO se pueden manipular en este ejercicio, pero si se deben tener presentes para la correcta visualización de las señales en la pantalla.<br><br>
+Este ejercicio puede realizarse tantas veces como se desee. Así mismo, se considera como componente de repaso y herramienta de auto verificación del aprendizaje, por lo tanto, no se genera ningún tipo de puntuación ni de calificación.</p>
+</div><h3>El osciloscopio tiene como señal de entrada al canal 1, la misma señal sinusoidal que alimenta un circuito (un filtro) y como señal de entrada al canal 2 la señal de salida de dicho circuito. La posición vertical del canal 1 está dos cuadros arriba del centro y la posición vertical del canal dos está dos cuadros abajo del centro.<br>
+A partir de la manipulación realizada sobre el control de modo de visualización (CHOP, ALT), indique el desfase en grados que hay entre la señal de entrada y la señal de salida de dicho circuito.</h3>
+</div>
+<div>
+    <img class="imagencentro" src="img2/18.modo_de_visualizacion_alt.png" id="mainImage">
+    <input class="myButton22" type="submit" value="Verificar" onclick="radio();">
+    <input id="myButton" type="image" src="img2/boton_invisible.png" class="mover18" onclick="changeImage()">
+    <div class="Listas2">
+    <h3> Seleccioné su respuesta</h3><!--Opcion Multiple-->
+  <h3><input type="radio" name="auto_renew"  id="auto_renew_1"/>0°.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>10 μs.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>72°.<br>
+  <input type="radio" name="auto_renew"  id="auto_renew_1"/>No puede saberse ya que cambia según el modo de visualización.<br></h3>
+</div>
+</div>
+</body>
+</html>
+
+  <script type="text/javascript">
+    //objetos
+    var myImage = document.getElementById('mainImage');
+    var myButton = document.getElementById('myButton');
+    //arreglos
+    var imageArray = [ "img2/18.modo_de_visualizacion_alt.png", "img2/18.modo_de_visualizacion_chop.png"];
+
+    //contador
+    var imageIndex = 0;
+
+    //funciones
+    function changeImage() {
+      imageIndex++;
+      if (imageIndex > 1) {
+        imageIndex = 0;
+      }
+      myImage.setAttribute("src", imageArray[imageIndex]);
+
+
+
+    }
+
+    function radio(){
+
+    var type = document.getElementsByName('auto_renew');
+    if (type[0].checked)
+    {
+      alert('INCORRECTO. Aunque en modo ALT no se visualiza ningún desfase, esta visualización no se ajusta a la realidad, sino a una configuración de visualización del osciloscopio, que permite que ambas señales inicien a dibujarse en la pantalla en el mismo lugar en diferentes trazas, por lo tanto, no se logra apreciar en la pantalla el desfase o retardo existe entre ellas.');
+    }
+    else if (type[1].checked)
+    {
+      alert('INCORRECTO. Aunque este valor corresponde de forma acertada al tiempo de retardo entre la señal de entrada y la señal de salida del circuito (un cuadro de división), este valor no indica el desfase entre ambas señales.');
+    }
+    else if (type[2].checked)
+    {
+      alert('CORRECTO. En modo CHOP ambas señales se dibujan de manera simultánea en la misma traza, por lo tanto, los desfases o retardos entre ellas se pueden apreciar en sobre pantalla.');
+    }
+    else if (type[3].checked)
+    {
+      alert('INCORRECTO. No puede saberse ya que cambia según el modo de visualización. Como el modo ALT y el modo CHOP utilizan diferentes procesos para que con una solo traza a la vez, puedan visualizarse dos señales sobre la pantalla, cada uno de estos procesos puede producir visualización diferente de retardos o diferencias de fase sobre la pantalla, pero esto no significa que no pueda saberse estos valores con un adecuado manejo del osciloscopio.');
+    }
+
+
+    }
+  </script>
